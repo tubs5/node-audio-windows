@@ -2,14 +2,22 @@
   "name": "node-audio-windows",
   "version": "1.0.1",
   "description": "Native Node.js audio controls for Windows",
-  "main": "index.js",
+  "main": "index.ts",
   "types": "index.d.ts",
   "os": [
     "win32"
   ],
+  "copyFiles": [
+        {
+            "from": "build/Release/volume_controller.node",
+            "to": "./"
+        }
+    ],
   "gypfile": true,
   "scripts": {
-    "install": "node-gyp rebuild"
+	"install": "node-gyp rebuild",
+	"postinstall":"copy-files-from-to"
+	
   },
   "repository": {
     "type": "git",
