@@ -1,9 +1,7 @@
 # Native Node.js volume controls for Windows
+Originaly Developed under https://github.com/jlonardi/node-audio-windows
+A native Windows API binding to control any audio device. Supports set/get the volume and get the muted state and set the muted state and switching between devices.
 
-A native Windows API binding to control the default audio device. Supports set/get the volume and get the muted state and set the muted state.
-
-[![npm](https://img.shields.io/npm/dm/node-audio-windows.svg)](https://www.npmjs.com/package/node-audio-windows)
-[![npm](https://img.shields.io/npm/v/node-audio-windows.svg)](https://www.npmjs.com/package/node-audio-windows)
 
 ## How to Use
 ```javascript

@@ -4,6 +4,9 @@ const { VolumeControl } = require("./");
 
 
 console.log('');
+console.log('x          - Number Of Devices');
+console.log('z          - Device Name');
+console.log('c          - Device Id');
 console.log('up/right   - volume up');
 console.log('down/left  - volume down');
 console.log('m          - mute/unmute');
@@ -32,8 +35,26 @@ process.stdin.on('keypress', (str, key) => {
       volumeControl.setMuted(!volumeControl.isMuted());
       break;
     }
+    case 'x':{
+      process.stdout.write(volumeControl.getNumberOfDevices().toString());
+      break;
+    }
+    case 'z':{
+      process.stdout.write(volumeControl.getDeviceName(2).toString());
+      break;
+    }
+    case 'c':{
+      process.stdout.write(volumeControl.getDeviceId(2).toString());
+      break;
+    }
+    case 'v':{
+      process.stdout.write("  " + volumeControl.switchAudioDevice("{0.0.0.00000000}.{272d1d6f-442a-4968-9b1b-411b2ea8975c}"))
+      break;
+    }
+
+
   }
-  drawBar(volumeControl.getVolume());
+  //drawBar(volumeControl.getVolume());
 });
 
 
@@ -74,4 +95,4 @@ const drawBar = (current) => {
   process.stdout.write(`${title}  ${emoticon}  [${filledBar}${emptyBar}] | ${percentageProgress}%            `);
 }
 
-drawBar(volumeControl.getVolume());
+//drawBar(volumeControl.getVolume());
